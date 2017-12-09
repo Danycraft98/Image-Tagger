@@ -1,12 +1,10 @@
 # Image-Tagger
 An application used to tag an image.
 
----
 ## To run the application using terminal
 1. type "javac application/*.java image/*.java"
 2. type "java application.Main"
 
----
 ## Classes
 
 ### Controller
