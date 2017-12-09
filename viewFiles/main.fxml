@@ -1,0 +1,35 @@
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.canvas.Canvas?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ListView?>
+
+<?import javafx.scene.control.Label?>
+<GridPane fx:controller="application.Controller" xmlns:fx="http://javafx.com/fxml" hgap="10" vgap="10">
+    <padding><Insets top="10" right="10" bottom="10" left="10"/></padding>
+
+    <GridPane hgap="10" vgap="10" minWidth="200">
+        <Label>Images</Label>
+        <ListView GridPane.rowIndex="1" fx:id="fileList" prefHeight="300" onMouseClicked="#handleLoadImageAction"/>
+        <Label GridPane.rowIndex="2">Tags</Label>
+        <ListView GridPane.rowIndex="3" fx:id="allTagList" prefHeight="300"/>
+    </GridPane>
+
+    <GridPane GridPane.columnIndex="1" hgap="10" vgap="10">
+        <GridPane hgap="10" vgap="10">
+            <Button GridPane.columnIndex="1" onAction="#handleSetRootDirAction">Set Directory</Button>
+            <TextField GridPane.columnIndex="2" fx:id="tagContent"/>
+            <Button GridPane.columnIndex="3" fx:id="btnSubmit" onAction="#handleSubmitTagAction">Submit</Button>
+
+            <Button GridPane.columnIndex="5" fx:id="btnDeleteTag" onAction="#handleDeleteTagAction">Delete Tag</Button>
+            <Button GridPane.columnIndex="6" fx:id="btnTagHistory" onAction="#handleTagHistory">Tag History</Button>
+            <Button GridPane.columnIndex="7" fx:id="btnMoveTo" onAction="#handleMoveTagAction">Move To ...</Button>
+            <Button GridPane.columnIndex="8" onAction="#handleOpenLogAction">Open Log</Button>
+        </GridPane>
+        <Label fx:id="filePath" GridPane.rowIndex="1"/>
+
+        <Canvas fx:id="imageView" GridPane.rowIndex="2" onMouseClicked="#handleImageClickAction"/>
+    </GridPane>
+</GridPane>
